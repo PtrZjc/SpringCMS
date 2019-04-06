@@ -7,12 +7,12 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 public class AppInitializer implements WebApplicationInitializer {
 
-    public void onStartup(ServletContext container) throws ServletException {
+    @Override
+    public void onStartup(ServletContext container) {
 		AnnotationConfigWebApplicationContext ctx =
                 new AnnotationConfigWebApplicationContext();
         ctx.register(AppConfig.class);
@@ -21,6 +21,7 @@ public class AppInitializer implements WebApplicationInitializer {
                 container.addServlet("dispatcher", new DispatcherServlet(ctx));
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
+
         FilterRegistration.Dynamic fr = container.addFilter("encodingFilter",
                 new CharacterEncodingFilter());
         fr.setInitParameter("encoding", "UTF-8");

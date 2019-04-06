@@ -1,7 +1,7 @@
 package pl.zajacp.model;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "categories")
@@ -14,6 +14,43 @@ public class Category {
     private String name;// (max 100 znaków)
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
-    @ManyToOne
-    private Article article;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "category")
+    private List<Article> articles;
+
+    public Category() {
+    }
+
+    public Category(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
 }

@@ -14,7 +14,44 @@ public class Author {
     private String firstName;
     @Column(length = 100, nullable = false)
     private String lastName;
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "author")
     private Article article;
 
+    public Author() {
+    }
+
+    public Author(String firstName, String lastName, Article article) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.article = article;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
+    }
 }

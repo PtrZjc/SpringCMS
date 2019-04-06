@@ -34,7 +34,7 @@ public class AppConfig implements WebMvcConfigurer {
   public ViewResolver internalResourceViewResolver() {
     InternalResourceViewResolver bean = new InternalResourceViewResolver();
     bean.setViewClass(JstlView.class);
-    bean.setPrefix("/WEB-INF/templates/");
+    bean.setPrefix("/WEB-INF/view/");
     bean.setSuffix(".jsp");
     return bean;
   }
@@ -50,7 +50,7 @@ public class AppConfig implements WebMvcConfigurer {
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
     LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
     em.setDataSource(dataSource());
-    em.setPackagesToScan(new String[] {"pl.zajacp"});
+    em.setPackagesToScan("pl.zajacp");
     em.setJpaDialect(new HibernateJpaDialect());
     em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
     em.setJpaProperties(additionalProperties());
@@ -67,7 +67,7 @@ public class AppConfig implements WebMvcConfigurer {
   }
 
   @Bean
- public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
+  public PlatformTransactionManager transactionManager(EntityManagerFactory emf){
     JpaTransactionManager transactionManager = new JpaTransactionManager();
     transactionManager.setEntityManagerFactory(emf);
     return transactionManager;
@@ -81,7 +81,7 @@ public class AppConfig implements WebMvcConfigurer {
   @Bean
   public DataSource dataSource() {
     DriverManagerDataSource dataSource = new DriverManagerDataSource();
-    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
     dataSource.setUrl("jdbc:mysql://localhost:3306/springcms?useSSL=false");
     dataSource.setUsername("root");
     dataSource.setPassword("password");
