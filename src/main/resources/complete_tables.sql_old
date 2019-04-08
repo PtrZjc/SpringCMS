@@ -1,0 +1,259 @@
+#
+# TABLE STRUCTURE FOR: authors
+#
+
+DROP TABLE IF EXISTS `authors`;
+
+CREATE TABLE `authors` (
+                           `id` int(11) NOT NULL AUTO_INCREMENT,
+                           `firstName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                           `lastName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                           PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (1, 'Ole', 'Mosciski');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (2, 'Zena', 'Lowe');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (3, 'Jameson', 'Stoltenberg');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (4, 'Jonatan', 'Beier');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (5, 'Alysha', 'Sporer');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (6, 'Noemy', 'Rippin');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (7, 'Vida', 'Okuneva');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (8, 'Jammie', 'Orn');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (9, 'Van', 'Effertz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (10, 'Francesca', 'Schoen');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (11, 'Vada', 'Kertzmann');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (12, 'Dorris', 'Krajcik');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (13, 'Aliza', 'Roberts');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (14, 'Noel', 'Herzog');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (15, 'Britney', 'Gleichner');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (16, 'Afton', 'Leannon');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (17, 'Jude', 'Terry');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (18, 'Bailey', 'Ledner');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (19, 'Walker', 'Kerluke');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (20, 'Pearlie', 'Pagac');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (21, 'Lennie', 'Lockman');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (22, 'Deshaun', 'Grady');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (23, 'Katrine', 'Heidenreich');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (24, 'Lina', 'Thiel');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (25, 'Nathen', 'Quitzon');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (26, 'Sunny', 'Kling');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (27, 'Kathleen', 'Nienow');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (28, 'Hadley', 'Macejkovic');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (29, 'Evan', 'Schuster');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (30, 'Emmanuel', 'Kub');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (31, 'Natalie', 'Bins');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (32, 'Andre', 'Schmitt');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (33, 'Mariah', 'Collins');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (34, 'Claudia', 'Dicki');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (35, 'Alexandrine', 'Kovacek');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (36, 'Javier', 'Jast');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (37, 'Rhea', 'Reichel');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (38, 'Ivy', 'Weimann');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (39, 'Imogene', 'Beier');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (40, 'Monte', 'Homenick');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (41, 'Malika', 'Nikolaus');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (42, 'Michelle', 'Eichmann');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (43, 'Reid', 'Rolfson');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (44, 'Brandyn', 'Bogisich');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (45, 'Kamille', 'Gerhold');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (46, 'Lexie', 'Buckridge');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (47, 'Kendrick', 'Wyman');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (48, 'Makenna', 'Gorczany');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (49, 'Adolph', 'Kemmer');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (50, 'Oren', 'Becker');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (51, 'Guillermo', 'Gulgowski');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (52, 'Brain', 'Ferry');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (53, 'Talia', 'Runolfsson');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (54, 'Julien', 'Breitenberg');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (55, 'Shanel', 'Ullrich');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (56, 'Jamie', 'Ratke');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (57, 'Glenna', 'Hodkiewicz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (58, 'Brenda', 'White');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (59, 'Macey', 'Mann');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (60, 'Johann', 'Hahn');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (61, 'Ashly', 'Bogisich');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (62, 'Roselyn', 'Russel');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (63, 'Ole', 'Lindgren');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (64, 'Danyka', 'Blanda');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (65, 'Nat', 'Batz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (66, 'Milo', 'Parisian');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (67, 'Danny', 'Borer');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (68, 'Janis', 'Mitchell');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (69, 'Emelia', 'Braun');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (70, 'Lazaro', 'Ortiz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (71, 'Leda', 'Grady');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (72, 'Mossie', 'Metz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (73, 'Makenzie', 'Schuppe');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (74, 'Ashly', 'Schulist');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (75, 'Francesco', 'Blanda');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (76, 'Brett', 'Deckow');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (77, 'Ken', 'Murray');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (78, 'Keara', 'Kutch');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (79, 'Lazaro', 'Muller');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (80, 'Donna', 'Bahringer');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (81, 'Alexys', 'Gerhold');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (82, 'Edison', 'Rosenbaum');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (83, 'Maribel', 'Denesik');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (84, 'Eladio', 'Corkery');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (85, 'Sibyl', 'Ratke');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (86, 'Orland', 'Schaden');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (87, 'Abraham', 'Kihn');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (88, 'Florine', 'Casper');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (89, 'Lauretta', 'Franecki');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (90, 'Linnie', 'Lemke');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (91, 'Hildegard', 'Parisian');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (92, 'Lyla', 'VonRueden');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (93, 'Carlee', 'Bechtelar');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (94, 'Shyanne', 'Altenwerth');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (95, 'Sallie', 'Hegmann');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (96, 'Shaun', 'Lubowitz');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (97, 'Lempi', 'Goyette');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (98, 'Matt', 'Lynch');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (99, 'Albertha', 'Wisozk');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`) VALUES (100, 'Alfred', 'Lebsack');
+
+
+#
+# TABLE STRUCTURE FOR: categories
+#
+
+DROP TABLE IF EXISTS `categories`;
+
+CREATE TABLE `categories` (
+                              `id` int(11) NOT NULL AUTO_INCREMENT,
+                              `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                              `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                              PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (1, 'Medical & Health Sciences', 'Eum aut consequuntur eaque eum.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (2, 'Research & Reproducibility', 'Asperiores sit quia impedit consequatur nemo cum.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (3, 'Medical & Health Sciences', 'Doloremque reiciendis dolor aspernatur quo.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (4, 'Biological Sciences', 'Velit placeat enim ullam similique quo aperiam.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (5, 'Studies in Human Society', 'Corrupti ut saepe expedita eveniet dolore rerum aut.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (6, 'Earth & Environmental Science', 'Enim est et ea reiciendis qui vitae dolores.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (7, 'Physical Sciences', 'Pariatur sapiente quis exercitationem distinctio.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (8, 'History & Archaeology', 'Eos minus natus molestiae autem.');
+INSERT INTO `categories` (`id`, `name`, `description`) VALUES (9, 'Information & Computer Sciences', 'Ullam in non culpa voluptatem odio architecto aspernatur sapiente.');
+
+#
+# TABLE STRUCTURE FOR: articles
+#
+
+DROP TABLE IF EXISTS `articles`;
+
+CREATE TABLE `articles` (
+                            `id` int(11) NOT NULL AUTO_INCREMENT,
+                            `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                            `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                            `created` datetime DEFAULT NULL,
+                            `updated` datetime DEFAULT NULL,
+                            `author_id` int(11) DEFAULT NULL,
+                            `category_id` int(11) DEFAULT NULL,
+                            PRIMARY KEY (`id`),
+                            KEY `author_id` (`author_id`),
+                            KEY `category_id` (`category_id`),
+                            CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`),
+                            CONSTRAINT `articles_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (1, '4', '4', '2017-08-29 00:00:00', '2019-03-07 23:00:24', 1, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (2, '4', '6', '2017-03-01 00:00:00', '2018-05-24 16:32:26', 2, 2);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (3, '8', '7', '2016-12-19 00:00:00', '2018-12-31 22:01:05', 3, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (4, '9', '5', '2017-08-02 00:00:00', '2018-07-13 12:54:32', 4, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (5, '1', '7', '2017-01-27 00:00:00', '2018-09-20 02:52:01', 5, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (6, '4', '4', '2017-10-18 00:00:00', '2018-04-14 22:51:56', 6, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (7, '4', '9', '2017-10-01 00:00:00', '2018-09-16 07:28:52', 7, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (8, '1', '5', '2016-12-08 00:00:00', '2018-11-12 04:04:45', 8, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (9, '1', '4', '2016-12-22 00:00:00', '2018-08-01 09:59:50', 9, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (10, '6', '3', '2017-04-25 00:00:00', '2018-05-17 03:21:46', 10, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (11, '4', '3', '2017-03-01 00:00:00', '2018-08-14 16:48:46', 11, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (12, '8', '5', '2017-02-22 00:00:00', '2019-03-07 06:31:52', 12, 7);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (13, '2', '2', '2017-07-25 00:00:00', '2018-06-26 12:09:00', 13, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (14, '9', '1', '2017-06-13 00:00:00', '2018-12-05 10:13:15', 14, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (15, '5', '8', '2017-03-24 00:00:00', '2018-07-28 11:01:25', 15, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (16, '4', '8', '2017-05-24 00:00:00', '2018-05-19 09:50:25', 16, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (17, '2', '6', '2017-08-08 00:00:00', '2018-12-27 07:56:47', 17, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (18, '7', '5', '2017-04-19 00:00:00', '2019-02-20 18:00:56', 18, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (19, '6', '4', '2017-07-11 00:00:00', '2018-07-26 06:30:40', 19, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (20, '9', '5', '2017-06-06 00:00:00', '2018-05-06 02:03:27', 20, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (21, '8', '7', '2017-03-15 00:00:00', '2018-12-19 07:10:42', 21, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (22, '5', '4', '2017-01-01 00:00:00', '2019-03-14 13:26:51', 22, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (23, '2', '1', '2016-12-19 00:00:00', '2018-10-18 00:09:40', 23, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (24, '6', '2', '2017-04-24 00:00:00', '2018-07-17 04:33:33', 24, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (25, '1', '8', '2017-05-02 00:00:00', '2018-08-17 20:44:55', 25, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (26, '3', '3', '2017-07-25 00:00:00', '2018-12-18 16:05:32', 26, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (27, '1', '4', '2017-07-12 00:00:00', '2019-01-24 05:52:25', 27, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (28, '1', '5', '2017-01-09 00:00:00', '2019-03-03 16:55:14', 28, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (29, '3', '5', '2017-07-01 00:00:00', '2018-10-06 23:05:13', 29, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (30, '9', '5', '2017-11-02 00:00:00', '2019-01-16 09:59:17', 30, 8);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (31, '6', '8', '2017-02-21 00:00:00', '2018-10-02 08:19:48', 31, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (32, '1', '8', '2017-01-04 00:00:00', '2018-06-17 08:03:23', 32, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (33, '6', '4', '2017-07-17 00:00:00', '2018-07-15 23:34:43', 33, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (34, '1', '3', '2017-05-01 00:00:00', '2019-01-08 09:07:50', 34, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (35, '9', '2', '2017-07-10 00:00:00', '2019-02-15 13:48:54', 35, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (36, '8', '4', '2017-04-01 00:00:00', '2018-11-07 21:22:42', 36, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (37, '6', '4', '2017-01-26 00:00:00', '2019-01-26 03:02:51', 37, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (38, '2', '5', '2017-08-11 00:00:00', '2018-09-22 09:03:06', 38, 2);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (39, '7', '8', '2017-07-10 00:00:00', '2018-05-12 06:48:49', 39, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (40, '6', '3', '2017-06-07 00:00:00', '2018-05-05 06:54:03', 40, 8);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (41, '9', '6', '2017-07-05 00:00:00', '2018-04-07 03:08:25', 41, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (42, '5', '8', '2017-06-19 00:00:00', '2019-02-04 09:34:12', 42, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (43, '2', '2', '2017-09-08 00:00:00', '2018-11-15 15:33:21', 43, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (44, '8', '8', '2016-12-16 00:00:00', '2019-02-15 19:28:28', 44, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (45, '7', '4', '2017-01-25 00:00:00', '2018-06-30 11:25:50', 45, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (46, '2', '3', '2017-04-26 00:00:00', '2018-07-27 15:16:33', 46, 8);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (47, '7', '5', '2017-06-07 00:00:00', '2019-03-10 07:49:28', 47, 8);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (48, '9', '4', '2016-12-27 00:00:00', '2018-12-23 19:03:01', 48, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (49, '6', '3', '2016-11-28 00:00:00', '2019-02-16 03:10:50', 49, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (50, '8', '6', '2017-11-08 00:00:00', '2019-01-10 20:29:35', 50, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (51, '1', '1', '2017-05-15 00:00:00', '2018-10-20 07:52:01', 51, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (52, '6', '7', '2017-07-19 00:00:00', '2019-02-04 06:15:32', 52, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (53, '3', '7', '2017-02-01 00:00:00', '2019-03-08 16:49:08', 53, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (54, '8', '6', '2017-05-08 00:00:00', '2018-07-06 14:48:11', 54, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (55, '9', '3', '2017-06-30 00:00:00', '2018-09-05 22:30:49', 55, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (56, '4', '2', '2017-05-25 00:00:00', '2018-07-17 01:28:29', 56, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (57, '3', '1', '2017-03-17 00:00:00', '2019-01-10 22:22:46', 57, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (58, '2', '4', '2017-08-01 00:00:00', '2018-09-17 08:28:51', 58, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (59, '8', '8', '2017-06-13 00:00:00', '2018-11-07 09:45:31', 59, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (60, '9', '6', '2017-02-20 00:00:00', '2018-12-28 05:42:39', 60, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (61, '3', '1', '2017-02-15 00:00:00', '2018-06-20 21:57:27', 61, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (62, '7', '1', '2017-05-10 00:00:00', '2018-08-15 19:12:09', 62, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (63, '9', '4', '2017-05-16 00:00:00', '2018-07-01 18:55:57', 63, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (64, '5', '5', '2017-07-27 00:00:00', '2019-02-16 20:18:16', 64, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (65, '3', '9', '2017-03-07 00:00:00', '2018-11-25 02:06:22', 65, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (66, '4', '6', '2017-06-27 00:00:00', '2018-06-23 11:26:46', 66, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (67, '2', '5', '2017-07-11 00:00:00', '2018-05-15 05:26:46', 67, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (68, '7', '1', '2017-04-14 00:00:00', '2019-03-21 13:02:27', 68, 7);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (69, '7', '4', '2017-03-08 00:00:00', '2018-04-24 13:34:49', 69, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (70, '3', '4', '2017-05-18 00:00:00', '2019-02-08 20:15:12', 70, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (71, '7', '5', '2017-09-01 00:00:00', '2018-08-07 15:37:28', 71, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (72, '9', '3', '2017-11-01 00:00:00', '2018-07-21 00:49:13', 72, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (73, '9', '8', '2017-03-06 00:00:00', '2019-03-16 03:49:14', 73, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (74, '9', '3', '2017-10-18 00:00:00', '2018-10-28 06:10:55', 74, 9);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (75, '3', '5', '2017-09-12 00:00:00', '2018-05-02 00:42:57', 75, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (76, '2', '8', '2017-01-30 00:00:00', '2018-12-28 20:10:00', 76, 8);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (77, '2', '9', '2017-03-07 00:00:00', '2019-03-19 07:00:52', 77, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (78, '4', '7', '2017-01-12 00:00:00', '2018-09-29 06:42:06', 78, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (79, '7', '8', '2017-09-05 00:00:00', '2018-04-21 07:46:45', 79, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (80, '9', '3', '2017-05-03 00:00:00', '2018-08-18 06:54:34', 80, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (81, '4', '4', '2017-05-10 00:00:00', '2018-04-23 00:14:39', 81, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (82, '5', '1', '2017-02-13 00:00:00', '2019-03-09 18:55:50', 82, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (83, '1', '5', '2017-02-14 00:00:00', '2019-02-24 15:27:28', 83, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (84, '3', '7', '2017-03-22 00:00:00', '2019-03-05 16:09:56', 84, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (85, '8', '2', '2017-10-13 00:00:00', '2018-10-02 17:24:34', 85, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (86, '9', '2', '2017-01-01 00:00:00', '2019-03-29 07:54:03', 86, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (87, '5', '3', '2017-07-24 00:00:00', '2019-01-08 23:28:32', 87, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (88, '7', '2', '2017-03-26 00:00:00', '2019-02-01 23:59:50', 88, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (89, '1', '5', '2017-01-31 00:00:00', '2018-10-01 23:09:33', 89, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (90, '4', '5', '2017-03-02 00:00:00', '2019-01-23 05:20:34', 90, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (91, '6', '8', '2017-07-24 00:00:00', '2019-03-13 20:42:13', 91, 6);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (92, '4', '1', '2017-05-12 00:00:00', '2019-01-17 10:47:01', 92, 5);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (93, '7', '5', '2016-12-05 00:00:00', '2019-01-20 22:51:13', 93, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (94, '1', '9', '2016-12-27 00:00:00', '2018-08-16 23:08:09', 94, 4);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (95, '7', '3', '2017-01-11 00:00:00', '2018-11-04 13:03:14', 95, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (96, '7', '4', '2016-12-06 00:00:00', '2018-12-03 16:28:22', 96, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (97, '9', '4', '2017-05-02 00:00:00', '2019-03-25 10:24:08', 97, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (98, '5', '2', '2016-12-05 00:00:00', '2019-01-01 04:36:32', 98, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (99, '1', '3', '2017-09-01 00:00:00', '2018-11-03 10:15:56', 99, 1);
+INSERT INTO `articles` (`id`, `title`, `content`, `created`, `updated`, `author_id`, `category_id`) VALUES (100, '8', '4', '2017-06-01 00:00:00', '2019-04-03 08:28:21', 100, 4);

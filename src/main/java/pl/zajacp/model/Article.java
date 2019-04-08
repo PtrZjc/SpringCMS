@@ -8,13 +8,14 @@ import java.time.LocalDateTime;
 public class Article {
 
     @Id
-    @GeneratedValue(strategy =
-            GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title; //(max. 200 znaków),
-    private String content; //
-    private LocalDateTime created; //(wartość ma być automatycznie dodawana podczas zapisu)
-    private LocalDateTime updated; //(wartość ma być automatycznie zmieniana podczas edycji).
+    @Column(length = 300, nullable = false)
+    private String title;
+    @Column(length = 1000, nullable = false)
+    private String content;
+    private LocalDateTime created;
+    private LocalDateTime updated;
 
     @OneToOne
     private Author author;
@@ -68,7 +69,6 @@ public class Article {
     public void setAuthor(Author author) {
         this.author = author;
     }
-
 
     @PrePersist
     public void prePersist() {

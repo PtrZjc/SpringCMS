@@ -1,5 +1,6 @@
 package pl.zajacp.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -59,10 +60,13 @@ public class AppConfig implements WebMvcConfigurer {
 
   Properties additionalProperties() {
     Properties properties = new Properties();
-    properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-    properties.setProperty("hibernate.dialect", 	"org.hibernate.dialect.MySQL5InnoDBDialect");
+    properties.setProperty("hibernate.hbm2ddl.auto", "update");
+    properties.setProperty("hibernate.hbm2ddl.import_files", "authors.sql, categories.sql, articles.sql");
+    properties.setProperty("hibernate.hbm2ddl.import_files_sql_extractor", "org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
+    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
     properties.setProperty("hibernate.show_sql", "true");
     properties.setProperty("hibernate.format_sql", "true");
+
     return properties;
   }
 
