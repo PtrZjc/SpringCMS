@@ -1,5 +1,8 @@
 package pl.zajacp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,7 +17,10 @@ public class Author {
     private String firstName;
     @Column(length = 100, nullable = false)
     private String lastName;
+
+    @JsonIgnore
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "author")
+
     private Article article;
 
     public Author() {

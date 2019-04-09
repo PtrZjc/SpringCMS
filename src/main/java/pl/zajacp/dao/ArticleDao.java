@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class ArticleDao <Aritcle> extends AbstractDao{
+public class ArticleDao extends AbstractDao<Article>{
 
     public ArticleDao() {
         setClass(Article.class);

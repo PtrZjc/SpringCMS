@@ -1,5 +1,7 @@
 package pl.zajacp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -21,11 +23,11 @@ public class Article {
     private Author author;
 
     @ManyToOne
+    @JoinColumn(name="category_id")
     private Category category;
 
     public Article() {
     }
-
     public Article(String title, String content, LocalDateTime created, LocalDateTime updated, Author author) {
         this.title = title;
         this.content = content;

@@ -1,4 +1,4 @@
-package pl.zajacp;
+package pl.zajacp.config.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,11 +48,24 @@ public class TestController {
 
     @RequestMapping("/check")
     public String all() {
-        Article article = (Article) articleDao.findById(50);
+        Article article = articleDao.findById(50);
         Author author = article.getAuthor();
         return author.getFirstName();
     }
 
+    @RequestMapping("/author")
+    public Author author() {
+        return authorDao.findById(50);
+    }
+
+    @RequestMapping("/cat")
+    public Category cat() {
+        return categoryDao.findById(4);
+    }
+    @RequestMapping("/art")
+    public Article art() {
+        return articleDao.findById(50);
+    }
     /*
     @RequestMapping("/add")
     public String add() {
@@ -84,3 +97,5 @@ public class TestController {
     }
 */
 }
+
+

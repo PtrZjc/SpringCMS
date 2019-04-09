@@ -1,5 +1,7 @@
 package pl.zajacp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,7 +17,9 @@ public class Category {
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
 
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "category")
+    @JsonIgnore
     private List<Article> articles;
 
     public Category() {
