@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name="authors")
 public class Author {
+
     @Id
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)
@@ -18,18 +19,10 @@ public class Author {
     @Column(length = 100, nullable = false)
     private String lastName;
 
-    @JsonIgnore
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "author")
-
-    private Article article;
+    @OneToMany(mappedBy = "author",cascade = {CascadeType.PERSIST, CascadeType.MERGE })
+    private List<Article> articles;
 
     public Author() {
-    }
-
-    public Author(String firstName, String lastName, Article article) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.article = article;
     }
 
     public Long getId() {
@@ -53,11 +46,12 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public Article getArticle() {
-        return article;
+    public List<Article> getArticles() {
+        return articles;
     }
 
-    public void setArticle(Article article) {
-        this.article = article;
+    public void addArticle(Article article) {
+        articles.add(article);
+        article.setAuthor(this);
     }
 }

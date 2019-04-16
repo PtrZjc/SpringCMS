@@ -15,7 +15,7 @@ public class ArticleDao extends AbstractDao<Article>{
         setClass(Article.class);
     }
 
-    public List getRecent(int number){
+    public List<Article> getRecent(int number){
         return entityManager.createQuery("SELECT a FROM Article a order by created desc").setMaxResults(number)
                 .getResultList();
     }

@@ -17,9 +17,7 @@ public class Category {
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
 
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "category")
-    @JsonIgnore
     private List<Article> articles;
 
     public Category() {
@@ -54,7 +52,8 @@ public class Category {
         return articles;
     }
 
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
+    public void addArticle(Article article) {
+        articles.add(article);
+        article.setCategory(this);
     }
 }

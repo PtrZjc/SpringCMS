@@ -36,7 +36,7 @@ public class AppConfig implements WebMvcConfigurer {
   public ViewResolver internalResourceViewResolver() {
     InternalResourceViewResolver bean = new InternalResourceViewResolver();
     bean.setViewClass(JstlView.class);
-    bean.setPrefix("/WEB-INF/view/");
+    bean.setPrefix("/WEB-INF/views/");
     bean.setSuffix(".jsp");
     return bean;
   }
@@ -96,7 +96,7 @@ public class AppConfig implements WebMvcConfigurer {
   @Override
   public void addCorsMappings(CorsRegistry registry) {
     registry.addMapping("/**")
-            .allowedMethods("GET", "POST", "PUT", "DELETE");
-            //.allowedOrigins("http://localhost");
+            .allowedMethods("GET", "POST", "PUT", "DELETE")
+            .allowedOrigins("http://localhost");
   }
 }

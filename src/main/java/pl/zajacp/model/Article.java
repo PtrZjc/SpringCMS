@@ -19,7 +19,8 @@ public class Article {
     private LocalDateTime created;
     private LocalDateTime updated;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name="author_id")
     private Author author;
 
     @ManyToOne
@@ -70,6 +71,7 @@ public class Article {
 
     public void setAuthor(Author author) {
         this.author = author;
+        author.getArticles().add(this);
     }
 
     @PrePersist
@@ -88,5 +90,6 @@ public class Article {
 
     public void setCategory(Category category) {
         this.category = category;
+        category.getArticles().add(this);
     }
 }
