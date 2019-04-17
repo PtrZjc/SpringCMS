@@ -1,5 +1,6 @@
 package pl.zajacp.controllers;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +24,9 @@ public class HomePageController {
 
     @GetMapping("/")
     private String openHome(Model model) {
-        model.addAttribute("recentArticles",articleDao.getRecent(5));
+        List<Article> arts = articleDao.getRecent(5);
+        Hibernate.initialize(arts);
+        model.addAttribute("recentArticles",arts);
         return "home";
     }
 }

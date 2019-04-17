@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "articles")
@@ -23,22 +24,28 @@ public class Article {
     @JoinColumn(name="author_id")
     private Author author;
 
-    @ManyToOne
-    @JoinColumn(name="category_id")
-    private Category category;
+    @ManyToMany(mappedBy = "articles",fetch = FetchType.EAGER)
+    private List<Category> categories;
 
     public Article() {
     }
-    public Article(String title, String content, LocalDateTime created, LocalDateTime updated, Author author) {
-        this.title = title;
-        this.content = content;
-        this.created = created;
-        this.updated = updated;
-        this.author = author;
+
+    @PrePersist
+    public void prePersist() {
+        created = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updated = LocalDateTime.now();
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -61,8 +68,16 @@ public class Article {
         return created;
     }
 
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
     public LocalDateTime getUpdated() {
         return updated;
+    }
+
+    public void setUpdated(LocalDateTime updated) {
+        this.updated = updated;
     }
 
     public Author getAuthor() {
@@ -74,22 +89,11 @@ public class Article {
         author.getArticles().add(this);
     }
 
-    @PrePersist
-    public void prePersist() {
-        created = LocalDateTime.now();
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    @PreUpdate
-    public void preUpdate() {
-        updated = LocalDateTime.now();
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-        category.getArticles().add(this);
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

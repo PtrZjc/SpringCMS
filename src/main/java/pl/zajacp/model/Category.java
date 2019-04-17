@@ -17,15 +17,19 @@ public class Category {
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "category")
+    @ManyToMany
+    @JoinTable(name = "category_article",
+            joinColumns = @JoinColumn(name =
+                    "article_id"),
+            inverseJoinColumns = @JoinColumn(name =
+                    "category_id"))
     private List<Article> articles;
 
     public Category() {
     }
 
-    public Category(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
@@ -54,6 +58,14 @@ public class Category {
 
     public void addArticle(Article article) {
         articles.add(article);
-        article.setCategory(this);
+        article.getCategories().add(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

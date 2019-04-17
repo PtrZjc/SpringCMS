@@ -1,7 +1,9 @@
 package pl.zajacp.controllers;
 
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +14,10 @@ import pl.zajacp.model.Article;
 import pl.zajacp.model.Author;
 import pl.zajacp.model.Category;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @Transactional
+@Controller
 @RequestMapping("/categories")
 public class CategoryController {
 
@@ -31,38 +33,42 @@ public class CategoryController {
     }
 
     @GetMapping("/all")
-    private String showCategories() {
+    public String showCategories() {
         return "listCategories";
     }
 
     @GetMapping("/")
-    private String addCategory(Category category, Model model) {
-        model.addAttribute("category",new Category());
+    public  String addCategory(Category category, Model model) {
+        model.addAttribute("category", new Category());
         return "formCategory";
     }
 
     @PostMapping("/")
     public String postCategory(@ModelAttribute Category category) {
-        if(category.getId()==null){
+        if (category.getId() == null) {
             categoryDao.save(category);
-        }else{
+        } else {
             categoryDao.update(category);
         }
         return "redirect:all";
     }
 
+    @PostMapping("/edit")
+    public String editCategory(@RequestParam(name = "id") Long id, Model model) {
+        Category cat = categoryDao.findById(id);
+        model.addAttribute("category", cat);
+        return "formCategory";
+    }
+
+    @PostMapping("/delete")
+    public String deleteCategory(@RequestParam(name = "id") Long id) {
+        categoryDao.deleteById(id);
+        return "redirect:all";
+    }
+
     @ModelAttribute("allCategories")
-    public List<Category> allBooks(){
-        return categoryDao.findAll();
-    }
-
-    @ModelAttribute("allAuthors")
-    public List<Author> allPublishers(){
-        return authorDao.findAll();
-    }
-
-    @ModelAttribute("allArticles")
-    public List<Article> allAuthor(){
-        return articleDao.findAll();
+    public List<Category> allCategories() {
+        List<Category> cats = categoryDao.findAll();
+        return cats;
     }
 }

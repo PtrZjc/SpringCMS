@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: goddy
-  Date: 19.01.19
-  Time: 16:12
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -18,14 +11,15 @@
 <%@ include file="includes/header.jspf" %>
 <div class="container">
 
-    <form:form action="${val ? '/valbk/':'/books/'}" method="post" modelAttribute="book">
-        <form:input type="hidden" path="id"/>
-        <table class="table table-striped border border-0">
+    <form:form action="/categories/" method="post" modelAttribute="category">
 
+        <table class="table table-striped border border-0">
+            <form:input type="hidden" name="id" path="id"/>
             <tr>
                 <td>title</td>
 
-                <td><form:input path="name"/>
+                <td><br>
+                    <form:input path="name"/>
                     <form:errors path="name" cssClass="text-danger"/>
                 </td>
             </tr>
@@ -35,12 +29,6 @@
                 <td>
                     <form:textarea path="description" rows="3" cols="20"/>
                     <form:errors path="description" cssClass="text-danger"/>
-                </td>
-            </tr>
-            <tr>
-                <td>articles from list</td>
-                <td><form:checkboxes items="${allArticles}" path="articles"/>
-                    <form:errors path="articles" cssClass="text-danger"/>
                 </td>
             </tr>
             <tr>
