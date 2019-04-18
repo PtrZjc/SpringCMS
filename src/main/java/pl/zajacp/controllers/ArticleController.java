@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.AbstractController;
 import pl.zajacp.dao.ArticleDao;
@@ -37,7 +38,7 @@ public class ArticleController {
     }
 
     @GetMapping("/")
-    public String addArticle(Article article, Model model) {
+    public String addArticle(Model model) {
         model.addAttribute("article", new Article());
         return "formArticle";
     }
@@ -45,7 +46,7 @@ public class ArticleController {
 
     @PostMapping("/")
     public String postArticle(@ModelAttribute Article article) {
-        System.out.println(article);
+        System.out.println(123456);
         if (article.getId() == null) {
             articleDao.save(article);
         } else {

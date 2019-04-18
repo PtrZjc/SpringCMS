@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.zajacp.dao.ArticleDao;
 import pl.zajacp.dao.AuthorDao;
@@ -14,6 +15,8 @@ import pl.zajacp.model.Article;
 import pl.zajacp.model.Author;
 import pl.zajacp.model.Author;
 
+import javax.validation.Valid;
+import javax.validation.Validator;
 import java.util.List;
 
 @Controller
@@ -22,10 +25,12 @@ import java.util.List;
 public class AuthorController {
 
     private final AuthorDao authorDao;
+    private final Validator validator;
 
     @Autowired
-    public AuthorController(AuthorDao authorDao) {
+    public AuthorController(AuthorDao authorDao, Validator validator) {
         this.authorDao = authorDao;
+        this.validator = validator;
     }
 
     @GetMapping("/all")
@@ -40,7 +45,11 @@ public class AuthorController {
     }
 
     @PostMapping("/")
-    public String postAuthor(@ModelAttribute Author author) {
+    public String postAuthor(@ModelAttribute @Valid Author author, BindingResult result) {
+        if (result.hasErrors()) {
+            return "formAuthor";
+        }
+
         if (author.getId() == null) {
             authorDao.save(author);
         } else {

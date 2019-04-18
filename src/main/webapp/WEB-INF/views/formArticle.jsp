@@ -11,7 +11,7 @@
 <%@ include file="includes/header.jspf" %>
 <div class="container">
 
-    <form:form action="/categories/" method="post" modelAttribute="article">
+    <form:form action="/articles/" method="post" modelAttribute="article">
 
         <table class="table table-striped border border-0">
             <form:input type="hidden" path="id"/>
@@ -34,14 +34,13 @@
             <tr>
                 <td>Category</td>
                 <td>
-                    <form:checkboxes path="category.id" items="${allCategories}" itemLabel="name" itemValue="id" delimiter="<br>"/>
+                    <form:checkboxes path="categories" items="${allCategories}" itemLabel="name" itemValue="id" delimiter="<br>"/>
                     <form:errors path="categories" cssClass="text-danger"/>
                 </td>
             </tr>
             <td>Author</td>
             <td>
-                <form:select path="author.id">
-                    <form:option value="-" label="--Wybierz autora--"/>
+                <form:select path="author">
                     <form:options itemValue="id" itemLabel="firstName" items="${allAuthors}"/>
                 </form:select>
                 <form:errors path="author" cssClass="text-danger"/>

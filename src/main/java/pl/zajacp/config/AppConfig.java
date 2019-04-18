@@ -13,6 +13,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -26,6 +27,7 @@ import pl.zajacp.converters.CategoryConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import javax.validation.Validator;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -96,6 +98,12 @@ public class AppConfig implements WebMvcConfigurer {
     return dataSource;
   }
 
+  @Bean
+  public Validator validator() {
+    return new
+            LocalValidatorFactoryBean();
+  }
+
   @Override
   public void addCorsMappings(CorsRegistry registry) {
     registry.addMapping("/**")
@@ -108,6 +116,7 @@ public class AppConfig implements WebMvcConfigurer {
     registry.addConverter(getAuthorConverter());
     registry.addConverter(getCategoryConverter());
   }
+
 
   @Bean
   public AuthorConverter getAuthorConverter() {

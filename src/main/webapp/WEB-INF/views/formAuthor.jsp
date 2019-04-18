@@ -31,20 +31,6 @@
                     <form:errors path="lastName" cssClass="text-danger"/>
                 </td>
             </tr>
-
-                <%--            <tr>--%>
-                <%--                <td>articles from list</td>--%>
-                <%--                <td>--%>
-                <%--                    <table>--%>
-
-                <%--                    <c:forEach var="article" items="${allArticles}">--%>
-                <%--                        <tr> <td> <form:checkbox value="${article.id}" path="articles"/><c:out value="${article.title}"/></td> </tr>--%>
-                <%--                    </c:forEach>--%>
-                <%--                    <form:errors path="articles" cssClass="text-danger"/>--%>
-
-                <%--                    </table>--%>
-                <%--                </td>--%>
-                <%--            </tr>--%>
             <tr>
                 <td></td>
                 <td><input type="submit" value="Save"></td>

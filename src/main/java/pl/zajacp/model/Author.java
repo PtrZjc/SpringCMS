@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,13 +17,17 @@ public class Author {
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 100, nullable = false)
+    @NotNull
+    @Column(length = 100)
+    @Size(min = 3, max = 20)
     private String firstName;
-    @Column(length = 100, nullable = false)
+    @NotNull
+    @Size(min = 3, max = 20)
+    @Column(length = 100)
     private String lastName;
 
     @OneToMany(mappedBy = "author",cascade = {CascadeType.ALL })
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<>();
 
     public Author() {
     }

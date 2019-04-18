@@ -1,9 +1,13 @@
 package pl.zajacp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 @Table(name = "categories")
@@ -12,7 +16,9 @@ public class Category {
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 100, nullable = false)
+    @Column(length = 100)
+    @NotNull
+    @Size(min = 5)
     private String name;// (max 100 znaków)
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
@@ -23,7 +29,7 @@ public class Category {
                     "article_id"),
             inverseJoinColumns = @JoinColumn(name =
                     "category_id"))
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<>();
 
     public Category() {
     }
@@ -54,6 +60,10 @@ public class Category {
 
     public List<Article> getArticles() {
         return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     public void addArticle(Article article) {
