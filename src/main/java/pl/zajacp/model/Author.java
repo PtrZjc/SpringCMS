@@ -19,7 +19,7 @@ public class Author {
     @Column(length = 100, nullable = false)
     private String lastName;
 
-    @OneToMany(mappedBy = "author",cascade = {CascadeType.PERSIST, CascadeType.MERGE })
+    @OneToMany(mappedBy = "author",cascade = {CascadeType.ALL })
     private List<Article> articles;
 
     public Author() {

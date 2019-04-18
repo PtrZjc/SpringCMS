@@ -21,37 +21,39 @@
     <table class="table table-striped border border-0">
         <tr>
             <th>id</th>
-            <th>First name</th>
-            <th>Last name</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Created</th>
+            <th>Author</th>
+            <th>Categories</th>
             <th>Actions</th>
         </tr>
-        <c:forEach items="${authors}" var="aut">
+        <c:forEach items="${allArticles}" var="art">
             <tr>
-                <td>${aut.id}</td>
-                <td>${aut.firstName}</td>
-                <td>${aut.lastName}</td>
+                <td>${art.id}</td>
+                <td>${art.title}</td>
+                <td>${art.content}</td>
+                <td>${art.created}</td>
+                <td>${art.author.firstName} ${art.author.lastName}</td>
                 <td>
-                    <table>
-                        <c:forEach items="${aut.articles}" var="art">
-                            <tr>
-                                <td>${art.title}</td>
-                            </tr>
+                    <ul>
+                        <c:forEach items="${art.categories}" var="cat">
+                            <li>${cat.name}</li>
                         </c:forEach>
-                    </table>
+                    </ul>
                 </td>
                 <td>
                     <form action="edit" method="post">
-                        <input type="hidden" name="id" value="${aut.id}">
+                        <input type="hidden" name="id" value="${art.id}">
                         <input class="btn btn-primary" type="submit" value="Edit">
                     </form>
                     <form action="delete" method="post">
-                        <input type="hidden" name="id" value="${aut.id}">
-                        <input type="submit" class="btn btn-danger"  value="Delete">
+                        <input type="hidden" name="id" value="${art.id}">
+                        <input type="submit" class="btn btn-danger" value="Delete">
                     </form>
                 </td>
             </tr>
         </c:forEach>
-
     </table>
     <%@ include file="includes/footer.jspf" %>
 </div>

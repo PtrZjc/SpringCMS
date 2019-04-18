@@ -27,29 +27,24 @@
             <tr>
                 <td>description</td>
                 <td>
-                    <form:textarea path="content" rows="3" cols="20"/>
+                    <form:textarea path="content" rows="5" cols="40"/>
                     <form:errors path="content" cssClass="text-danger"/>
                 </td>
             </tr>
             <tr>
                 <td>Category</td>
                 <td>
-
-<%--                    TODO sypie mi tu skads data violation
-                        trzeba tu zrobic request param by name i wziac sobie liste zaznaczen i recznie powczytywac autorów do nich-
-                        i chyba trzeba bedzie jeszcze ogarnac ID od autora, a nie jego nazwe --%>
-
-                    <c:forEach var="category" items="${allCategories}">
-                        <form:checkbox value="${category.id}" path="categories"/><c:out value="${category.name}"/><br>
-                    </c:forEach>
+                    <form:checkboxes path="category.id" items="${allCategories}" itemLabel="name" itemValue="id" delimiter="<br>"/>
                     <form:errors path="categories" cssClass="text-danger"/>
                 </td>
             </tr>
             <td>Author</td>
-            <td><form:select path="author">
-                <form:option value="-" label="--Wybierz autora--"/>
-                <form:options items="${allAuthors}"/>
-            </form:select>
+            <td>
+                <form:select path="author.id">
+                    <form:option value="-" label="--Wybierz autora--"/>
+                    <form:options itemValue="id" itemLabel="firstName" items="${allAuthors}"/>
+                </form:select>
+                <form:errors path="author" cssClass="text-danger"/>
             </td>
             <tr>
                 <td></td>

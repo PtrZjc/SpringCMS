@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -20,6 +21,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import pl.zajacp.converters.AuthorConverter;
+import pl.zajacp.converters.CategoryConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -98,5 +101,21 @@ public class AppConfig implements WebMvcConfigurer {
     registry.addMapping("/**")
             .allowedMethods("GET", "POST", "PUT", "DELETE")
             .allowedOrigins("http://localhost");
+  }
+
+  @Override
+  public void addFormatters(FormatterRegistry registry) {
+    registry.addConverter(getAuthorConverter());
+    registry.addConverter(getCategoryConverter());
+  }
+
+  @Bean
+  public AuthorConverter getAuthorConverter() {
+    return new AuthorConverter();
+  }
+
+  @Bean
+  public CategoryConverter getCategoryConverter() {
+    return new CategoryConverter();
   }
 }

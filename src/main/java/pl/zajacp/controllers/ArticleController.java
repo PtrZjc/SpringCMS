@@ -43,9 +43,9 @@ public class ArticleController {
     }
 
 
-    //TODO tutaj musze soobie złapać mrequest param i powrzucac kolejno do listy zaczytane obiekty z bazy.
     @PostMapping("/")
     public String postArticle(@ModelAttribute Article article) {
+        System.out.println(article);
         if (article.getId() == null) {
             articleDao.save(article);
         } else {
@@ -68,7 +68,7 @@ public class ArticleController {
     }
 
     @ModelAttribute("allArticles")
-    public List<Article> allAuthor(){
+    public List<Article> allAuthor() {
         return articleDao.findAll();
     }
 
@@ -79,7 +79,7 @@ public class ArticleController {
     }
 
     @ModelAttribute("allAuthors")
-    public List<Author> allAuthors(){
+    public List<Author> allAuthors() {
         return authorDao.findAll();
     }
 }
