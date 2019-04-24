@@ -35,13 +35,7 @@
                 <td>${art.content}</td>
                 <td>${art.created}</td>
                 <td>${art.author.firstName} ${art.author.lastName}</td>
-                <td>
-                    <ul>
-                        <c:forEach items="${art.categories}" var="cat">
-                            <li>${cat.name}</li>
-                        </c:forEach>
-                    </ul>
-                </td>
+                <td>${art.category.name}</td>
                 <td>
                     <form action="edit" method="post">
                         <input type="hidden" name="id" value="${art.id}">

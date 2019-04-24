@@ -1,9 +1,7 @@
-package pl.zajacp.converters;
+package pl.zajacp.category;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.zajacp.dao.CategoryDao;
-import pl.zajacp.model.Category;
 
 public class CategoryConverter implements Converter<String, Category> {
    @Autowired

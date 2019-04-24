@@ -20,9 +20,9 @@
 <div class="container">
     <table class="table table-striped border border-0">
         <tr>
-            <th>id</th>
             <th>First name</th>
             <th>Last name</th>
+            <th>id</th>
             <th>Actions</th>
         </tr>
         <c:forEach items="${allAuthors}" var="aut">

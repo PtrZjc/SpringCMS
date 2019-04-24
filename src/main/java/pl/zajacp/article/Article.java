@@ -1,13 +1,12 @@
-package pl.zajacp.model;
+package pl.zajacp.article;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import pl.zajacp.author.Author;
+import pl.zajacp.category.Category;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "articles")
@@ -25,12 +24,15 @@ public class Article {
     private LocalDateTime created;
     private LocalDateTime updated;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name="author_id")
     private Author author;
+
     @NotNull
-    @ManyToMany(mappedBy = "articles",fetch = FetchType.EAGER)
-    private List<Category> categories = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Article() {
     }
@@ -94,12 +96,12 @@ public class Article {
         author.getArticles().add(this);
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
@@ -111,7 +113,7 @@ public class Article {
                 ", created=" + created +
                 ", updated=" + updated +
                 ", author=" + author +
-                ", categories=" + categories +
+                ", category=" + category +
                 '}';
     }
 }

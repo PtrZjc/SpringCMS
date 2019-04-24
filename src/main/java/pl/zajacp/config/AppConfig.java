@@ -22,8 +22,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-import pl.zajacp.converters.AuthorConverter;
-import pl.zajacp.converters.CategoryConverter;
+import pl.zajacp.author.AuthorConverter;
+import pl.zajacp.category.CategoryConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -66,7 +66,7 @@ public class AppConfig implements WebMvcConfigurer {
 
   Properties additionalProperties() {
     Properties properties = new Properties();
-    properties.setProperty("hibernate.hbm2ddl.auto", "update");
+    properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
     properties.setProperty("hibernate.hbm2ddl.import_files", "authors.sql, categories.sql, articles.sql");
     properties.setProperty("hibernate.hbm2ddl.import_files_sql_extractor", "org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
     properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
@@ -113,8 +113,8 @@ public class AppConfig implements WebMvcConfigurer {
 
   @Override
   public void addFormatters(FormatterRegistry registry) {
-    registry.addConverter(getAuthorConverter());
     registry.addConverter(getCategoryConverter());
+    registry.addConverter(getAuthorConverter());
   }
 
 

@@ -1,7 +1,7 @@
-package pl.zajacp.model;
+package pl.zajacp.category;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.internal.NotNull;
+import pl.zajacp.article.Article;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -23,12 +23,7 @@ public class Category {
     @Column(nullable = true)
     private String description; // (może przyjmować wartość null)
 
-    @ManyToMany
-    @JoinTable(name = "category_article",
-            joinColumns = @JoinColumn(name =
-                    "article_id"),
-            inverseJoinColumns = @JoinColumn(name =
-                    "category_id"))
+    @OneToMany(mappedBy = "category",cascade = {CascadeType.ALL })
     private List<Article> articles = new ArrayList<>();
 
     public Category() {
@@ -68,7 +63,7 @@ public class Category {
 
     public void addArticle(Article article) {
         articles.add(article);
-        article.getCategories().add(this);
+        article.setCategory(this);
     }
 
     @Override

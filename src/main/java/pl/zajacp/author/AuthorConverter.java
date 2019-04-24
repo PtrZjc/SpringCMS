@@ -1,9 +1,7 @@
-package pl.zajacp.converters;
+package pl.zajacp.author;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.zajacp.dao.AuthorDao;
-import pl.zajacp.model.Author;
 
 public class AuthorConverter implements Converter<String, Author> {
 

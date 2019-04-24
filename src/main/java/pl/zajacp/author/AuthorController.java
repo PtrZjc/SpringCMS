@@ -1,19 +1,11 @@
-package pl.zajacp.controllers;
+package pl.zajacp.author;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.zajacp.dao.ArticleDao;
-import pl.zajacp.dao.AuthorDao;
-import pl.zajacp.dao.AuthorDao;
-import pl.zajacp.dao.CategoryDao;
-import pl.zajacp.model.Article;
-import pl.zajacp.model.Author;
-import pl.zajacp.model.Author;
 
 import javax.validation.Valid;
 import javax.validation.Validator;

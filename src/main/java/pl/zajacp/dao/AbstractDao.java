@@ -10,7 +10,7 @@ public abstract class AbstractDao<T> { //implements IDao<T>
     private Class<T> entityClass;
 
     @PersistenceContext
-    EntityManager entityManager;
+    protected EntityManager entityManager;
 
     public void setClass(Class<T> entityClass) {
         this.entityClass = entityClass;

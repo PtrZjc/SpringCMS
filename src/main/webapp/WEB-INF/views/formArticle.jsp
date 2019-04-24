@@ -14,11 +14,10 @@
     <form:form action="/articles/" method="post" modelAttribute="article">
 
         <table class="table table-striped border border-0">
-            <form:input type="hidden" path="id"/>
+            <form:input type="hidden" name="id" path="id"/>
             <tr>
                 <td>title</td>
-
-                <td><br>
+                <td>
                     <form:input path="title"/>
                     <form:errors path="title" cssClass="text-danger"/>
                 </td>
@@ -34,12 +33,15 @@
             <tr>
                 <td>Category</td>
                 <td>
-                    <form:checkboxes path="categories" items="${allCategories}" itemLabel="name" itemValue="id" delimiter="<br>"/>
-                    <form:errors path="categories" cssClass="text-danger"/>
+                    <form:select path="category">
+                        <form:options itemValue="id" itemLabel="name" items="${allCategories}"/>
+                    </form:select>
+                    <form:errors path="category" cssClass="text-danger"/>
                 </td>
             </tr>
             <td>Author</td>
             <td>
+<%--            jeśli tu będzie path="author.id", to zadziała--%>
                 <form:select path="author">
                     <form:options itemValue="id" itemLabel="firstName" items="${allAuthors}"/>
                 </form:select>

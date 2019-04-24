@@ -1,13 +1,12 @@
-package pl.zajacp.dao;
+package pl.zajacp.author;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pl.zajacp.model.Article;
-import pl.zajacp.model.Author;
+import pl.zajacp.dao.AbstractDao;
 
 @Repository
 @Transactional
-public class AuthorDao extends AbstractDao<Author>{
+public class AuthorDao extends AbstractDao<Author> {
 
     public AuthorDao() {
         setClass(Author.class);

@@ -1,15 +1,14 @@
-package pl.zajacp.dao;
+package pl.zajacp.article;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pl.zajacp.model.Article;
+import pl.zajacp.dao.AbstractDao;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @Repository
 @Transactional
-public class ArticleDao extends AbstractDao<Article>{
+public class ArticleDao extends AbstractDao<Article> {
 
     public ArticleDao() {
         setClass(Article.class);

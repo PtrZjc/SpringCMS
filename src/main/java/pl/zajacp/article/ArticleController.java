@@ -1,18 +1,14 @@
-package pl.zajacp.controllers;
+package pl.zajacp.article;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.AbstractController;
-import pl.zajacp.dao.ArticleDao;
-import pl.zajacp.dao.AuthorDao;
-import pl.zajacp.dao.CategoryDao;
-import pl.zajacp.model.Article;
-import pl.zajacp.model.Author;
-import pl.zajacp.model.Category;
+import pl.zajacp.author.AuthorDao;
+import pl.zajacp.category.CategoryDao;
+import pl.zajacp.author.Author;
+import pl.zajacp.category.Category;
 
 import java.util.List;
 
@@ -46,7 +42,6 @@ public class ArticleController {
 
     @PostMapping("/")
     public String postArticle(@ModelAttribute Article article) {
-        System.out.println(123456);
         if (article.getId() == null) {
             articleDao.save(article);
         } else {

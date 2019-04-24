@@ -1,7 +1,6 @@
-package pl.zajacp.model;
+package pl.zajacp.author;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import pl.zajacp.article.Article;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
