@@ -1,4 +1,4 @@
-package pl.zajacp.dao;
+package pl.zajacp.generic;
 
 import java.util.List;
 

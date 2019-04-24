@@ -1,4 +1,4 @@
-package pl.zajacp.dao;
+package pl.zajacp.generic;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
