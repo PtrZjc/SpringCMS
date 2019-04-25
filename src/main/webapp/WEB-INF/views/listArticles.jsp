@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 
 <html>
 <head>
@@ -28,7 +29,8 @@
             <th>Categories</th>
             <th>Actions</th>
         </tr>
-        <c:forEach items="${allArticles}" var="art">
+
+        <c:forEach items="${draft ? allDrafts: allArticles}" var="art">
             <tr>
                 <td>${art.id}</td>
                 <td>${art.title}</td>

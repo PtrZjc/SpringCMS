@@ -20,6 +20,7 @@ public class Author {
     @Column(length = 100)
     @Size(min = 3, max = 20)
     private String firstName;
+
     @NotNull
     @Size(min = 3, max = 20)
     @Column(length = 100)

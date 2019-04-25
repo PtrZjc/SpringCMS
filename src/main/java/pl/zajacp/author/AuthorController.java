@@ -63,7 +63,6 @@ public class AuthorController {
         return "redirect:all";
     }
 
-
     @ModelAttribute("allAuthors")
     public List<Author> allAuthors(){
         return authorDao.findAll();

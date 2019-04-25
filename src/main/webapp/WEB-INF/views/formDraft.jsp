@@ -11,10 +11,11 @@
 <%@ include file="includes/header.jspf" %>
 <div class="container">
 
-    <form:form action="/articles/" method="post" modelAttribute="article">
+    <form:form action="/articles/drafts/" method="post" modelAttribute="article">
 
         <table class="table table-striped border border-0">
             <form:input type="hidden" name="id" path="id"/>
+            <form:input type="hidden" name="draft" path="draft"/>
             <tr>
                 <td>title</td>
                 <td>
@@ -30,23 +31,6 @@
                     <form:errors path="content" cssClass="text-danger"/>
                 </td>
             </tr>
-            <tr>
-                <td>Category</td>
-                <td>
-                    <form:select path="category">
-                        <form:options itemValue="id" itemLabel="name" items="${allCategories}"/>
-                    </form:select>
-                    <form:errors path="category" cssClass="text-danger"/>
-                </td>
-            </tr>
-            <td>Author</td>
-            <td>
-<%--            jeśli tu będzie path="author.id", to zadziała--%>
-                <form:select path="author.id">
-                    <form:options itemValue="id" itemLabel="firstName" items="${allAuthors}"/>
-                </form:select>
-                <form:errors path="author" cssClass="text-danger"/>
-            </td>
             <tr>
                 <td></td>
                 <td><input type="submit" value="Save"></td>

@@ -2,10 +2,12 @@ package pl.zajacp.article;
 
 import pl.zajacp.author.Author;
 import pl.zajacp.category.Category;
+import pl.zajacp.validation.DraftValidation;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.groups.Default;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,21 +17,26 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(length = 300)
-    @Size(max=300)
+    @NotNull(groups = {Default.class, DraftValidation.class})
+    @Size(groups = {Default.class, DraftValidation.class}, max=300, min=4)
     private String title;
+
     @Column(length = 1000)
-    @Size(max=1000)
+    @NotNull(groups = {Default.class, DraftValidation.class})
+    @Size(max=1000, groups = {Default.class, DraftValidation.class})
     private String content;
     private LocalDateTime created;
     private LocalDateTime updated;
+    private Boolean draft;
 
-    @NotNull
+    @NotNull(groups = Default.class)
     @ManyToOne
     @JoinColumn(name="author_id")
     private Author author;
 
-    @NotNull
+    @NotNull(groups = Default.class)
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -94,6 +101,14 @@ public class Article {
     public void setAuthor(Author author) {
         this.author = author;
         author.getArticles().add(this);
+    }
+
+    public Boolean getDraft() {
+        return draft;
+    }
+
+    public void setDraft(Boolean draft) {
+        this.draft = draft;
     }
 
     public Category getCategory() {

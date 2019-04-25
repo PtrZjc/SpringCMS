@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.zajacp.article.ArticleDao;
 import pl.zajacp.author.AuthorDao;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Transactional
@@ -39,7 +41,11 @@ public class CategoryController {
     }
 
     @PostMapping("/")
-    public String postCategory(@ModelAttribute Category category) {
+    public String postCategory(@ModelAttribute @Valid Category category, BindingResult result) {
+        if (result.hasErrors()) {
+            return "formCategory";
+        }
+
         if (category.getId() == null) {
             categoryDao.save(category);
         } else {

@@ -19,4 +19,8 @@ public class ArticleDao extends AbstractDao<Article> {
                 .getResultList();
     }
 
+    public List<Article> getDrafts(){
+        return entityManager.createQuery("SELECT a FROM Article where a.draft = true").getResultList();
+    }
+
 }
